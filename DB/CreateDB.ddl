@@ -55,7 +55,7 @@ CREATE TABLE cart_order(
         restaurant_id   VARCHAR(10) NOT NULL,
         quantity        TINYINT NOT NULL,
         half_or_full    BINARY NOT NULL,
-        PRIMARY KEY(order_id,item_id),
+        PRIMARY KEY(order_id),
         FOREIGN KEY(item_id) REFERENCES item(item_id),
         FOREIGN KEY(restaurant_id) REFERENCES restaurant(restaurant_id));
 
@@ -86,8 +86,16 @@ CREATE TABLE total_price(
         delivery_charge TINYINT NOT NULL,
         PRIMARY KEY(cart_id),
         FOREIGN KEY(cart_id) REFERENCES cart(cart_id));
+        
+# 10. Cart items
+CREATE TABLE cart_has(
+       cart_id 		VARCHAR(10),
+       order_id 	VARCHAR(10),
+       PRIMARY KEY(cart_id,order_id),
+       FOREIGN KEY(order_id) REFERENCES cart_order(order_id),
+       FOREIGN KEY(cart_id) REFERENCES cart(cart_id));
 
-# 10. FAQs
+# 11. FAQs
 CREATE TABLE faq(
         faq_id          VARCHAR(10),
         question        VARCHAR(100) NOT NULL,
