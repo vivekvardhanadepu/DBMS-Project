@@ -28,7 +28,7 @@ public class Signup extends HttpServlet {
 		String pass = request.getParameter("pass1");
 		if(pass.equals(request.getParameter("pass2"))){
 			newUser.setUsername(request.getParameter("uname"));
-			newUser.setPassword("pass");
+			newUser.setPassword(request.getParameter("pass"));
 			newUser.setPhone_no(request.getParameter("num"));
 			newUser.setFirstName(request.getParameter("fname"));
 			newUser.setLastName(request.getParameter("lname"));
