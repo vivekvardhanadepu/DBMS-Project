@@ -22,13 +22,12 @@ public class Signup extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.sendRedirect("signup.jsp");
 	}
-	
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		User newUser = new User();
 		String pass = request.getParameter("pass1");
 		if(pass.equals(request.getParameter("pass2"))){
 			newUser.setUsername(request.getParameter("uname"));
-			newUser.setPassword(request.getParameter("pass"));
+			newUser.setPassword(request.getParameter("pass1"));
 			newUser.setPhone_no(request.getParameter("num"));
 			newUser.setFirstName(request.getParameter("fname"));
 			newUser.setLastName(request.getParameter("lname"));
@@ -41,6 +40,7 @@ public class Signup extends HttpServlet {
 				if(flag) {
 					signupDao.addEntry(newUser);
 					response.sendRedirect("signin.jsp");
+					//System.out.println("Hi");
 				}
 				else {
 					response.sendRedirect("signup.jsp");

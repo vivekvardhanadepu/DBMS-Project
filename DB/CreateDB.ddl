@@ -1,14 +1,13 @@
 # 1. User data
 CREATE TABLE user (
-        user_id         VARCHAR(10),
-        email_id        VARCHAR(40) NOT NULL,
-        phone_no        BIGINT NOT NULL,
+        username        VARCHAR(45),
+        emailid         VARCHAR(45) NOT NULL,
+        phone_no        VARCHAR(45) NOT NULL,
         firstname       VARCHAR(10) NOT NULL,
-        middlename      VARCHAR(10),
         lastname        VARCHAR(10) NOT NULL,
         user_status     BINARY(1) NOT NULL,
-        user_password   VARCHAR(30) NOT NULL,
-        PRIMARY KEY(user_id));
+        passwd   	VARCHAR(45) NOT NULL,
+        PRIMARY KEY(username));
 
 # 2. Location
 CREATE TABLE location(
@@ -22,10 +21,10 @@ CREATE TABLE location(
 
 # 3. User Location
 CREATE TABLE user_loc(
-        user_id         VARCHAR(10),
+        username        VARCHAR(10),
         location_id     VARCHAR(10),
-        PRIMARY KEY(user_id,location_id),
-        FOREIGN KEY(user_id) REFERENCES user(user_id),
+        PRIMARY KEY(username,location_id),
+        FOREIGN KEY(username) REFERENCES user(username),
         FOREIGN KEY(location_id) REFERENCES location(location_id));
 
 # 4. Restaurant
@@ -61,22 +60,22 @@ CREATE TABLE cart_order(
 
 # 7. Past Orders
 CREATE TABLE past_orders(
-        user_id         VARCHAR(10),
+        username        VARCHAR(10),
         order_id        VARCHAR(10),
-        PRIMARY KEY(user_id,order_id),
-        FOREIGN KEY(user_id) REFERENCES user(user_id),
+        PRIMARY KEY(username,order_id),
+        FOREIGN KEY(username) REFERENCES user(username),
         FOREIGN KEY(order_id) REFERENCES cart_order(order_id));
 
 # 8. Cart
 CREATE TABLE cart(
         cart_id         VARCHAR(10),
         location_id     VARCHAR(10),
-        user_id         VARCHAR(10),
+        username        VARCHAR(10) NOT NULL,
         delivery_time   TINYINT NOT NULL,
         delivery_status BINARY NOT NULL,
         PRIMARY KEY(cart_id),
         FOREIGN KEY(location_id) REFERENCES location(location_id),
-        FOREIGN KEY(user_id) REFERENCES user(user_id));
+        FOREIGN KEY(username) REFERENCES user(username));
 
 # 9. Cart Total
 CREATE TABLE total_price(
