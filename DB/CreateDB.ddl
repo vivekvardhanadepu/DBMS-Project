@@ -55,6 +55,7 @@ CREATE TABLE cart_order(
         restaurant_id   VARCHAR(10) NOT NULL,
         quantity        TINYINT NOT NULL,
         half_or_full    BOOLEAN NOT NULL,
+        order_status	TINYINT(1) NOT NULL,
         PRIMARY KEY(order_id),
         FOREIGN KEY(item_id) REFERENCES item(item_id),
         FOREIGN KEY(restaurant_id) REFERENCES restaurant(restaurant_id));
@@ -74,7 +75,6 @@ CREATE TABLE cart(
         location_id     VARCHAR(10),
         username        VARCHAR(10) NOT NULL,
         delivery_time   TINYINT NOT NULL,
-        delivery_status BOOLEAN NOT NULL,
         PRIMARY KEY(cart_id),
         FOREIGN KEY(location_id) REFERENCES location(location_id),
         FOREIGN KEY(username) REFERENCES user(username));
