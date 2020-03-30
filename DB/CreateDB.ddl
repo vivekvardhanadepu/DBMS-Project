@@ -5,7 +5,7 @@ CREATE TABLE user (
         phone_no        VARCHAR(45) NOT NULL,
         firstname       VARCHAR(10) NOT NULL,
         lastname        VARCHAR(10) NOT NULL,
-        user_status     BINARY(1) NOT NULL,
+        user_status     BOOLEAN(1) NOT NULL,
         passwd   	VARCHAR(45) NOT NULL,
         PRIMARY KEY(username));
 
@@ -31,9 +31,10 @@ CREATE TABLE user_loc(
 CREATE TABLE restaurant(
         restaurant_id   VARCHAR(10),
         restaurant_name VARCHAR(20) NOT NULL,
-        rating          TINYINT,
+        rating          DOUBLE,
         avg_price       SMALLINT NOT NULL,
         cuisine         VARCHAR(50) NOT NULL,
+        status		BOOLEAN NOT NULL,
         PRIMARY KEY(restaurant_id));
 
 # 5. Item
@@ -42,8 +43,8 @@ CREATE TABLE item(
         restaurant_id   VARCHAR(10),
         item_name       VARCHAR(20) NOT NULL,
         price           SMALLINT NOT NULL,
-        availability    BINARY NOT NULL,
-        rating          TINYINT,
+        availability    BOOLEAN NOT NULL,
+        rating          DOUBLE,
         PRIMARY KEY(item_id,restaurant_id),
         FOREIGN KEY(restaurant_id) REFERENCES restaurant(restaurant_id));
 
@@ -53,7 +54,7 @@ CREATE TABLE cart_order(
         item_id         VARCHAR(10) NOT NULL,
         restaurant_id   VARCHAR(10) NOT NULL,
         quantity        TINYINT NOT NULL,
-        half_or_full    BINARY NOT NULL,
+        half_or_full    BOOLEAN NOT NULL,
         PRIMARY KEY(order_id),
         FOREIGN KEY(item_id) REFERENCES item(item_id),
         FOREIGN KEY(restaurant_id) REFERENCES restaurant(restaurant_id));
@@ -62,6 +63,7 @@ CREATE TABLE cart_order(
 CREATE TABLE past_orders(
         username        VARCHAR(10),
         order_id        VARCHAR(10),
+        rating		TINYINT,
         PRIMARY KEY(username,order_id),
         FOREIGN KEY(username) REFERENCES user(username),
         FOREIGN KEY(order_id) REFERENCES cart_order(order_id));
@@ -72,7 +74,7 @@ CREATE TABLE cart(
         location_id     VARCHAR(10),
         username        VARCHAR(10) NOT NULL,
         delivery_time   TINYINT NOT NULL,
-        delivery_status BINARY NOT NULL,
+        delivery_status BOOLEAN NOT NULL,
         PRIMARY KEY(cart_id),
         FOREIGN KEY(location_id) REFERENCES location(location_id),
         FOREIGN KEY(username) REFERENCES user(username));
@@ -81,7 +83,7 @@ CREATE TABLE cart(
 CREATE TABLE total_price(
         cart_id         VARCHAR(10),
         price           SMALLINT NOT NULL,
-        gst             SMALLINT NOT NULL,
+        gst             DOUBLE NOT NULL,
         delivery_charge TINYINT NOT NULL,
         PRIMARY KEY(cart_id),
         FOREIGN KEY(cart_id) REFERENCES cart(cart_id));
