@@ -27,7 +27,6 @@ public class LocationDao {
 		//System.out.println(stu.getStreet());
 		statement.executeUpdate();
 		
-		
 	}
 	
 	

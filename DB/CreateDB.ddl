@@ -21,7 +21,7 @@ CREATE TABLE location(
 
 # 3. User Location
 CREATE TABLE user_loc(
-        username        VARCHAR(10),
+        username        VARCHAR(45),
         location_id     VARCHAR(10),
         PRIMARY KEY(username,location_id),
         FOREIGN KEY(username) REFERENCES user(username),
@@ -62,7 +62,7 @@ CREATE TABLE cart_order(
 
 # 7. Past Orders
 CREATE TABLE past_orders(
-        username        VARCHAR(10),
+        username        VARCHAR(45),
         order_id        VARCHAR(10),
         rating		TINYINT,
         PRIMARY KEY(username,order_id),
@@ -73,7 +73,7 @@ CREATE TABLE past_orders(
 CREATE TABLE cart(
         cart_id         VARCHAR(10),
         location_id     VARCHAR(10),
-        username        VARCHAR(10) NOT NULL,
+        username        VARCHAR(45) NOT NULL,
         delivery_time   TINYINT NOT NULL,
         PRIMARY KEY(cart_id),
         FOREIGN KEY(location_id) REFERENCES location(location_id),

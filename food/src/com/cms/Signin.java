@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +21,7 @@ public class Signin extends HttpServlet {
 	/**
 	 * 
 	 */
+	String str;
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,8 +39,15 @@ public class Signin extends HttpServlet {
 		try {
 			newUser = loginDao.check(newUser);
 			if(newUser.isValid()) {
+				str =  newUser.getUsername();
+				request.setAttribute("user", newUser.getUsername());
 				HttpSession session = request.getSession();
-				session.setAttribute("student", newUser);
+				session.setAttribute("user", newUser);
+				Cookie uid_cookie = new Cookie("uid",newUser.getUsername());
+				//System.out.println(uid_cookie.getValue());
+				response.addCookie(uid_cookie);
+				//RequestDispatcher reDispatcher = request.getRequestDispatcher("Home.jsp");
+				//reDispatcher.forward(request, response);
 				response.sendRedirect("Home.jsp");
 				
 			}
@@ -50,5 +59,7 @@ public class Signin extends HttpServlet {
 		}
 		
 	}
+	
+	
 
 }

@@ -2,7 +2,6 @@ package com.cms;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +31,6 @@ public class Signup extends HttpServlet {
 			newUser.setFirstName(request.getParameter("fname"));
 			newUser.setLastName(request.getParameter("lname"));
 			newUser.setEmailId(request.getParameter("emailid"));
-			
 			
 			LoginDao signupDao = new LoginDao();
 			try {

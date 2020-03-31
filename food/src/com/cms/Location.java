@@ -1,7 +1,5 @@
 package com.cms;
 
-import java.lang.*;
-
 public class Location {
 	private String location_id;
 	private String flat_no;
@@ -11,7 +9,7 @@ public class Location {
 	private String pincode;
 	
 	public void setLocation_id() {
-		double k = Math.random();
+		int k = (int) Math.random();
 		location_id = Double.toString(k);
 	}
 	
