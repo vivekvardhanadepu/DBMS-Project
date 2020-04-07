@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Signactivity"
+   >
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="SignUp"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="textPersonName"
+        android:hint = "username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"/>
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="textPassword"
+        android:hint = "password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="155dp"/>
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="textPassword"
+        android:hint = "Re-enter password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="215dp"/>
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="phone"
+        android:hint = "phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="265dp"/>
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="textPersonName"
+        android:hint = "firstname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="325dp"/>
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="textPersonName"
+        android:hint = "lastname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="385dp" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:inputType="textEmailAddress"
+        android:hint = "email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="445dp"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:backgroundTint="#FF9800"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="570dp"/>
+</RelativeLayout>
