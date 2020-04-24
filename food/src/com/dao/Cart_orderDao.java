@@ -12,7 +12,7 @@ public class Cart_orderDao {
 	String insertString = "insert into cart_order(order_id,item_id,restaurant_id,quantity,half_or_full) values(?,?,?,?,?)";
 	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";
+	String passwordString = "qwert1";
 	
 	public void addEntry(Cart_order stu) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");

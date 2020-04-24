@@ -12,7 +12,7 @@ public class LocationDao {
 	String insertString = "insert into location(location_id,flat_no,street,city,state,pincode) values(?,?,?,?,?,?)";
 	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";
+	String passwordString = "qwert1";
 	
 	public void addEntry(Location stu) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");

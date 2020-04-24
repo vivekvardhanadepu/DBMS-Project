@@ -103,20 +103,13 @@ input:focus{
 </head>
 <body>
 <% 
-//reading db config  
-FileInputStream fis=new FileInputStream("DBConfig.txt");       
-Scanner sc=new Scanner(fis);   
-String urlString = sc.nextLine();
-String usernameString = sc.nextLine();
-String passwordString = sc.nextLine();
-sc.close();     //closes the scanner
 
 	String user_id = request.getParameter("user_id");
 	String cart_id = request.getParameter("cart_id");
 	String delivery_time = request.getParameter("delivery_time");
-	/*String urlString = "jdbc:mysql://localhost:3306/swiggy";
+	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";*/
+	String passwordString = "qwert1";
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(urlString, usernameString, passwordString);
 	// changing status of all orders to delivering

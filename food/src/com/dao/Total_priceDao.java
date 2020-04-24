@@ -10,7 +10,7 @@ public class Total_priceDao {
 	String insertString = "insert into total_price(cart_id,price,gst,delivery_charge) values(?,?,?,?)";
 	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";
+	String passwordString = "qwert1";
 	
 	public void addEntry(Total_price stu) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");

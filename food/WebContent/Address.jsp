@@ -101,18 +101,9 @@ input:focus{
 
 <% 
 	String id = request.getParameter("id");
-
-//reading db config  
-FileInputStream fis=new FileInputStream("DBConfig.txt");       
-Scanner sc=new Scanner(fis);   
-String urlString = sc.nextLine();
-String usernameString = sc.nextLine();
-String passwordString = sc.nextLine();
-sc.close();     //closes the scanner
-
-	/*String urlString = "jdbc:mysql://localhost:3306/swiggy";
+	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";*/
+	String passwordString = "qwert1";
 	String sqlString = "select * from location";
 	String restaurant_name;
 	Class.forName("com.mysql.jdbc.Driver");

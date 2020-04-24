@@ -103,19 +103,11 @@ input:focus{
 </head>
 <body>
 <% 
-//reading db config  
-FileInputStream fis=new FileInputStream("DBConfig.txt");       
-Scanner sc=new Scanner(fis);   
-String urlString = sc.nextLine();
-String usernameString = sc.nextLine();
-String passwordString = sc.nextLine();
-sc.close();     //closes the scanner
-
 	String search = request.getParameter("userId");
 	System.out.println(search+"dish");
-	/*String urlString = "jdbc:mysql://localhost:3306/swiggy";
+	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";*/
+	String passwordString = "qwert1";
 	String sqlString = "select * from item where item_name REGEXP('"+search+"')";
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(urlString,usernameString,passwordString);

@@ -105,22 +105,15 @@ input:focus{
 	<h1>Restaurant Name</h1>
 
 	<%
-	// reading db config  
-    FileInputStream fis=new FileInputStream("DBConfig.txt");       
-    Scanner sc=new Scanner(fis);   
-	String urlString = sc.nextLine();
-	String usernameString = sc.nextLine();
-	String passwordString = sc.nextLine();
-    sc.close();     //closes the scanner
     
-	/*String urlString = "jdbc:mysql://localhost:3306/swiggy";
+	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";*/
+	String passwordString = "qwert1";
 	
 	String user_id = request.getParameter("id");
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(urlString, usernameString, passwordString);
-	String sqlString1 = "select * from cart where username = " + user_id + ";";
+	String sqlString1 = "select * from cart where username like " + user_id + ";";
 	PreparedStatement statement1 = conn.prepareStatement(sqlString1);
 	ResultSet rs1 = statement1.executeQuery();
 	rs1.next();

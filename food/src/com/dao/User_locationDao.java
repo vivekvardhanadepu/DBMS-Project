@@ -10,7 +10,7 @@ public class User_locationDao {
 	String insertString = "insert into user_loc(username,location_id) values(?,?)";
 	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";
+	String passwordString = "qwert1";
 	
 	public void addEntry(User_location stu) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");

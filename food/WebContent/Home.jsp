@@ -32,21 +32,14 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
 <br/>
 
 
-<%  
-// reading db config  
-FileInputStream fis=new FileInputStream("DBConfig.txt");       
-Scanner sc=new Scanner(fis);   
-String urlString = sc.nextLine();
-String usernameString = sc.nextLine();
-String passwordString = sc.nextLine();
-sc.close();     //closes the scanner 
+<%   
 
 	Cookie[] cookies = request.getCookies();
 	String idea = cookies[1].getValue();
 	String stree;
-	/*String urlString = "jdbc:mysql://localhost:3306/swiggy";
+	String urlString = "jdbc:mysql://localhost:3306/swiggy";
 	String usernameString = "root";
-	String passwordString = "Sindhu3001";*/
+	String passwordString = "qwert1";
 	String sqlString = "select * from restaurant";
 	String restaurant_name;
 	Class.forName("com.mysql.jdbc.Driver");
