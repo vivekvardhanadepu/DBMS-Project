@@ -62,15 +62,23 @@ class DbOperation
 
 
 	/*
-	* The delete operation
-	* When this method is called record is deleted for the given id
+	* The search operation
+	* When this method is called restaurants are searched for the given restaurant_name
 	*/
-	function deleteHero($id){
-		$stmt = $this->con->prepare("DELETE FROM heroes WHERE id = ? ");
-		$stmt->bind_param("i", $id);
-		if($stmt->execute())
-			return true;
+	function restaurant_search($restaurant_name){
+		$stmt = $this->con->prepare("SELECT restaurant_name FROM restaurant where restaurant_name like %?%")
+		$stmt->bind_param("s", $restaurant_name);
+        $stmt->execute();
+        $stmt->bind_result($restaurant_name);
+        $restaurants = array();
 
-		return false;
+        while($stmt->fetch()){
+            $restaurant = array();
+            $restaurant['restaurant_name'] = $restaurant_name;
+
+            array_push($restaurants,$restaurant);
+        }
+
+        return $restaurants;
 	}
 }
