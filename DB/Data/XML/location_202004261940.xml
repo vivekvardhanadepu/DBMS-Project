@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <LOCATION LOCATION_ID="qwertyuiie" FLAT_NO="1" STREET="C.V Raman Nagar" CITY="Bangalore" STATE="Karnataka" PINCODE="560093"/>
+    <LOCATION LOCATION_ID="qwertyuiio" FLAT_NO="2" STREET="Murugeshpalya" CITY="Bangalore" STATE="Karnataka" PINCODE="560075"/>
+    <LOCATION LOCATION_ID="qwertyuiiq" FLAT_NO="3" STREET="Kadubeesanahalli" CITY="Bangalore" STATE="Karnataka" PINCODE="560103"/>
+    <LOCATION LOCATION_ID="qwertyuiir" FLAT_NO="4" STREET="K.R puram" CITY="Bangalore" STATE="Karnataka" PINCODE="560036"/>
+    <LOCATION LOCATION_ID="qwertyuiit" FLAT_NO="5" STREET="C.V Raman Nagar" CITY="Bangalore" STATE="Karnataka" PINCODE="560093"/>
+    <LOCATION LOCATION_ID="qwertyuiiu" FLAT_NO="6" STREET="Marathalli" CITY="Bangalore" STATE="Karnataka" PINCODE="560037"/>
+    <LOCATION LOCATION_ID="qwertyuiiw" FLAT_NO="7" STREET="Indira Nagar" CITY="Bangalore" STATE="Karnataka" PINCODE="560038"/>
+    <LOCATION LOCATION_ID="qwertyuiiy" FLAT_NO="8" STREET="Indira Nagar" CITY="Bangalore" STATE="Karnataka" PINCODE="560038"/>
+</dataset>

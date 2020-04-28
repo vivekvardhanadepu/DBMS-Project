@@ -1,0 +1,58 @@
+INSERT INTO swiggy.item (item_id,restaurant_id,item_name,price,availability,rating) VALUES 
+('1','qwertyuiiw','Soft Taco - Veg',179,1,9)
+,('10','qwertyuiie','Cheese Infused Garlic Bread (Single Box)',134,1,5)
+,('11','qwertyuiie','Hazelnut Brownie (Pack of 2)',177,1,8)
+,('12','qwertyuiiq','Immunity Pro Chole Kulcha Meal',148,1,9)
+,('13','qwertyuiiq','Iron Booster Palak Paneer Meal',196,1,7)
+,('14','qwertyuiiq','Iron Booster Palak Chicken Meal',224,1,6)
+,('15','qwertyuiiq','Cheese Melt Paneer Wrap',172,1,9)
+,('16','qwertyuiiq','Chicken Signature Rice Bowl',205,1,10)
+,('17','qwertyuiiq','Chocolate Dessert Jar',200,1,8)
+,('18','qwertyuiio','Nawabi Chicken Biryani',200,1,10)
+;
+INSERT INTO swiggy.item (item_id,restaurant_id,item_name,price,availability,rating) VALUES 
+('19','qwertyuiio','Murgh Lababdar with Jeera Rice',199,1,9)
+,('2','qwertyuiiw','Hot Date Bundle',469,1,8)
+,('20','qwertyuiio','Break from Bartan Combo',539,1,9)
+,('21','qwertyuiio','Can''t Cook Anymore Combo',435,1,8)
+,('22','qwertyuiio','Chef''s Special Veggie Pasta Primavera',179,1,7)
+,('23','qwertyuiio','Build Your 2 Bowl Combo',330,1,8)
+,('24','qwertyuiio','BBQ Cauliflower Manchurian',149,1,6)
+,('25','qwertyuiit','Belgian Chocolate Ice Cream Cookie Sandwich',109,1,7)
+,('26','qwertyuiit','Nutella Ice Cream Cookie Sandwich',109,1,9)
+,('27','qwertyuiit','Milk Biki & Nutella Ice Cream',55,1,8)
+;
+INSERT INTO swiggy.item (item_id,restaurant_id,item_name,price,availability,rating) VALUES 
+('28','qwertyuiit','Parle G & Salted Caramel with Choco Almond',55,1,9)
+,('29','qwertyuiit','Best of Parle G Sandwiches - Twin Pack',99,1,10)
+,('3','qwertyuiiw','Chalupa Veg Meal',200,1,7)
+,('30','qwertyuiit','Belgian Chocolate Ice Cream [Scoop]',100,1,10)
+,('31','qwertyuiir','Belgian Dark Chocolate Shake',304,1,10)
+,('32','qwertyuiir','Fig & Honey',219,1,10)
+,('33','qwertyuiir','Millet Choco - Sugar Free',219,1,6)
+,('34','qwertyuiir','Banana Caramel Goodness',228,1,8)
+,('35','qwertyuiir','Hot Chocolate Fudge',171,1,10)
+,('36','qwertyuiir','Ferroro Rocher Shake',304,1,9)
+;
+INSERT INTO swiggy.item (item_id,restaurant_id,item_name,price,availability,rating) VALUES 
+('37','qwertyuiir','Red Riding Hood',228,1,8)
+,('38','qwertyuiiy','Forced Family Time Combo (Non Veg)',730,1,6)
+,('39','qwertyuiiy','Weekend WFH Combo (Veg)',216,1,9)
+,('4','qwertyuiiw','The Burrito - Veg',189,1,5)
+,('40','qwertyuiiy','Date Night at Home Combo (Veg)',561,1,8)
+,('41','qwertyuiiy','Veg Masala Whopper Combo',338,1,8)
+,('42','qwertyuiiy','Overworked From Home Combo (Non Veg)',213,1,7)
+,('43','qwertyuiiy','BK?? Fried Chicken',99,1,8)
+,('44','qwertyuiiu','Big Spicy Paneer Wrap Meal',303,1,7)
+,('45','qwertyuiiu','Mcspicy Fried Chicken - 1 PC',118,1,6)
+;
+INSERT INTO swiggy.item (item_id,restaurant_id,item_name,price,availability,rating) VALUES 
+('48','qwertyuiiu','McSaver Big Spicy Chicken Wrap Meal ',334,1,9)
+,('49','qwertyuiiu','Mcspicy Fried Chicken - 2 PC',214,1,10)
+,('5','qwertyuiiw','Chocodilla',49,1,6)
+,('50','qwertyuiiu','2 Filter Coffee (S) + 2 Chocolate Cookies',277,1,8)
+,('6','qwertyuiiw','Cinnamon Twist',49,1,6)
+,('7','qwertyuiie','Mutton Overload Pizza (11 Inch)',572,1,10)
+,('8','qwertyuiie','Picante Paneer Pizza (11 Inch)',534,1,7)
+,('9','qwertyuiie','Exotica Paneer Pizza (11 inch)',505,1,6)
+;

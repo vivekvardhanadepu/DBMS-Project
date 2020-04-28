@@ -5,7 +5,7 @@ CREATE TABLE user (
         phone_no        VARCHAR(45) NOT NULL,
         firstname       VARCHAR(10) NOT NULL,
         lastname        VARCHAR(10) NOT NULL,
-        user_status     BOOLEAN(1) NOT NULL,
+        user_status     BOOLEAN NOT NULL,
         passwd   	VARCHAR(45) NOT NULL,
         PRIMARY KEY(username));
 
@@ -30,18 +30,21 @@ CREATE TABLE user_loc(
 # 4. Restaurant
 CREATE TABLE restaurant(
         restaurant_id   VARCHAR(10),
+        location_id	 VARCHAR(10) NOT NULL,
         restaurant_name VARCHAR(20) NOT NULL,
         rating          DOUBLE,
         avg_price       SMALLINT NOT NULL,
+        delivery_time	 SMALLINT,
         cuisine         VARCHAR(50) NOT NULL,
-        status		BOOLEAN NOT NULL,
+        status		 BOOLEAN NOT NULL,
+        FOREIGN KEY(location_id) REFERENCES location(location_id),
         PRIMARY KEY(restaurant_id));
 
 # 5. Item
 CREATE TABLE item(
         item_id         VARCHAR(10),
         restaurant_id   VARCHAR(10),
-        item_name       VARCHAR(20) NOT NULL,
+        item_name       VARCHAR(50) NOT NULL,
         price           SMALLINT NOT NULL,
         availability    BOOLEAN NOT NULL,
         rating          DOUBLE,

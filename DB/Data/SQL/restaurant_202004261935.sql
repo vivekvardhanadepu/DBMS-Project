@@ -1,0 +1,10 @@
+INSERT INTO swiggy.restaurant (restaurant_id,restaurant_name,rating,avg_price,cuisine,status,location_id,delivery_time) VALUES 
+('qwertyuiie','Ovenstory Pizza',3.7,350,'Pizzas, Italian',0,'qwertyuiie',NULL)
+,('qwertyuiio','The Bowl Company',4.9,250,'Continental, Indian, Pan Asian, Oriental',0,'qwertyuiio',NULL)
+,('qwertyuiiq','Faasos',4,200,'Fast Food, North Indian, Biryani, Desserts',0,'qwertyuiiq',NULL)
+,('qwertyuiir','Frozen Bottle',4.2,250,'Beverages, Ice Cream, Desserts',0,'qwertyuiir',NULL)
+,('qwertyuiit','Frosty Crumble',4.5,300,'Desserts, Ice Cream, Beverages',0,'qwertyuiit',NULL)
+,('qwertyuiiu','McDonald''s',4.1,400,'Fast Food',0,'qwertyuiiu',NULL)
+,('qwertyuiiw','Taco Bell',4.1,250,'Mexican',0,'qwertyuiiw',NULL)
+,('qwertyuiiy','Burger King',3.9,350,'American, Fast Food',0,'qwertyuiiy',NULL)
+;

@@ -1,0 +1,6 @@
+INSERT INTO swiggy.faq (faq_id,question,ans) VALUES 
+('1234567890','I have issues regarding order','Write us at care@foodie.com quoting order id')
+,('1234567891','Food quality is bad','File a complaint by calling 1800232328 or email us')
+,('1234567892','Can we pay online?','We are working on it right now and add it in a few days')
+,('1234567893','How to cancel the order?','No, you can''t cancel the order')
+;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <FAQ FAQ_ID="1234567890" QUESTION="I have issues regarding order" ANS="Write us at care@foodie.com quoting order id"/>
+    <FAQ FAQ_ID="1234567891" QUESTION="Food quality is bad" ANS="File a complaint by calling 1800232328 or email us"/>
+    <FAQ FAQ_ID="1234567892" QUESTION="Can we pay online?" ANS="We are working on it right now and add it in a few days"/>
+    <FAQ FAQ_ID="1234567893" QUESTION="How to cancel the order?" ANS="No, you can't cancel the order"/>
+</dataset>
