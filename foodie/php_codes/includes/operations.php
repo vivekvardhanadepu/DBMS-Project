@@ -12,51 +12,19 @@ class DbOperation
     }
 
 	/*
-	* The create operation
-	* When this method is called a new record is created in the database
+	* The add_item operation
+	* When this method is called the item with the given id is added to the cart
 	*/
-	function createHero($name, $realname, $rating, $teamaffiliation){
-		$stmt = $this->con->prepare("INSERT INTO heroes (name, realname, rating, teamaffiliation) VALUES (?, ?, ?, ?)");
-		$stmt->bind_param("ssis", $name, $realname, $rating, $teamaffiliation);
-		if($stmt->execute())
-			return true;
-		return false;
-	}
-
-	/*
-	* The read operation
-	* When this method is called it is returning all the existing record of the database
-	*/
-	function getHeroes(){
-		$stmt = $this->con->prepare("SELECT id, name, realname, rating, teamaffiliation FROM heroes");
-		$stmt->execute();
-		$stmt->bind_result($id, $name, $realname, $rating, $teamaffiliation);
-
-		$heroes = array();
-
-		while($stmt->fetch()){
-			$hero  = array();
-			$hero['id'] = $id;
-			$hero['name'] = $name;
-			$hero['realname'] = $realname;
-			$hero['rating'] = $rating;
-			$hero['teamaffiliation'] = $teamaffiliation;
-
-			array_push($heroes, $hero);
+	function add_item($item_id, $order_id, $restaurant_id, $cart_id){
+		$stmt = $this->con->prepare("INSERT INTO cart_order(order_id, item_id, restaurant_id, quantity,".
+		                                                "half_or_full, order_status) VALUES (?, ?, ?,'1','1','-1')");
+		$stmt->bind_param("sss", $order_id, $item_id, $restaurant_id);
+		if($stmt->execute()){
+		    $stmt1 = $this->con->prepare("INSERT INTO cart_has(cart_id, order_id) VALUES (?, ?)");
+		    $stmt1->bind_param("ss", $cart_id, $order_id);
+		    if($stmt1->execute())
+			    return true;
 		}
-
-		return $heroes;
-	}
-
-	/*
-	* The update operation
-	* When this method is called the record with the given id is updated with the new given values
-	*/
-	function updateHero($id, $name, $realname, $rating, $teamaffiliation){
-		$stmt = $this->con->prepare("UPDATE heroes SET name = ?, realname = ?, rating = ?, teamaffiliation = ? WHERE id = ?");
-		$stmt->bind_param("ssisi", $name, $realname, $rating, $teamaffiliation, $id);
-		if($stmt->execute())
-			return true;
 		return false;
 	}
 
@@ -88,9 +56,9 @@ class DbOperation
 	* When this method is called restaurants are fetched
 	*/
 	function get_restaurants(){
-		$stmt = $this->con->prepare("SELECT restaurant_id,restaurant_name,rating,avg_price,delivery_time,cuisine FROM restaurant")
+		$stmt = $this->con->prepare("SELECT restaurant_id,restaurant_name,rating,avg_price,delivery_time,cuisine,status FROM restaurant")
         $stmt->execute();
-        $stmt->bind_result($restaurant_id,$restaurant_name,$rating,$avg_price,$delivery_time,$cuisine);
+        $stmt->bind_result($restaurant_id,$restaurant_name,$rating,$avg_price,$delivery_time,$cuisine,$status);
         $restaurants = array();
 
         while($stmt->fetch()){
@@ -101,6 +69,7 @@ class DbOperation
             $restaurant['avg_price'] = $avg_price;
             $restaurant['delivery_time'] = $delivery_time;
             $restaurant['cuisine'] = $cuisine;
+            $restaurant['status'] = $status;
 
             array_push($restaurants,$restaurant);
         }
@@ -118,19 +87,20 @@ class DbOperation
 		$stmt->bind_param("s", $restaurant_id);
         $stmt->execute();
         $stmt->bind_result($item_id,$restaurant_name,$rating,$avg_price,$delivery_time,$cuisine,$availability);
-        $restaurants = array();
+        $items = array();
 
         while($stmt->fetch()){
-            $restaurant = array();
-            $restaurant['item_name'] = $item_name;
-            $restaurant['item_id'] = $item_id;
-            $restaurant['rating'] = $rating;
-            $restaurant['price'] = $price;
-            $restaurant['availability'] = $availability;
+            $item = array();
+            $item['item_name'] = $item_name;
+            $item['item_id'] = $item_id;
+            $item['rating'] = $rating;
+            $item['price'] = $price;
+            $item['availability'] = $availability;
+            $item['restaurant_id'] = $restaurant_id;
 
-            array_push($restaurants,$restaurant);
+            array_push($items,$item);
         }
 
-        return $restaurants;
+        return $items;
 	}
 }
