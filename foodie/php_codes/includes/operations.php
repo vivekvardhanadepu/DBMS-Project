@@ -69,12 +69,64 @@ class DbOperation
 		$stmt = $this->con->prepare("SELECT restaurant_name FROM restaurant where restaurant_name like %?%")
 		$stmt->bind_param("s", $restaurant_name);
         $stmt->execute();
-        $stmt->bind_result($restaurant_name);
+        $stmt->bind_result($name);
+        $restaurants = array();
+
+        while($stmt->fetch()){
+            $restaurant = array();
+            $restaurant['restaurant_name'] = $name;
+
+            array_push($restaurants,$restaurant);
+        }
+
+        return $restaurants;
+	}
+}
+
+	/*
+	* Listing restaurants
+	* When this method is called restaurants are fetched
+	*/
+	function get_restaurants(){
+		$stmt = $this->con->prepare("SELECT restaurant_id,restaurant_name,rating,avg_price,delivery_time,cuisine FROM restaurant")
+        $stmt->execute();
+        $stmt->bind_result($restaurant_id,$restaurant_name,$rating,$avg_price,$delivery_time,$cuisine);
         $restaurants = array();
 
         while($stmt->fetch()){
             $restaurant = array();
             $restaurant['restaurant_name'] = $restaurant_name;
+            $restaurant['restaurant_id'] = $restaurant_id;
+            $restaurant['rating'] = $rating;
+            $restaurant['avg_price'] = $avg_price;
+            $restaurant['delivery_time'] = $delivery_time;
+            $restaurant['cuisine'] = $cuisine;
+
+            array_push($restaurants,$restaurant);
+        }
+
+        return $restaurants;
+	}
+}
+
+/*
+	* Listing items of a restaurant
+	* When this method is called items are fetched
+	*/
+	function get_items($restaurant_id){
+		$stmt = $this->con->prepare("SELECT item_id,item_name,rating,price,availability FROM item where restaurant_id = ?");
+		$stmt->bind_param("s", $restaurant_id);
+        $stmt->execute();
+        $stmt->bind_result($item_id,$restaurant_name,$rating,$avg_price,$delivery_time,$cuisine,$availability);
+        $restaurants = array();
+
+        while($stmt->fetch()){
+            $restaurant = array();
+            $restaurant['item_name'] = $item_name;
+            $restaurant['item_id'] = $item_id;
+            $restaurant['rating'] = $rating;
+            $restaurant['price'] = $price;
+            $restaurant['availability'] = $availability;
 
             array_push($restaurants,$restaurant);
         }
